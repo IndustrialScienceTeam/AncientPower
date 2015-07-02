@@ -1,0 +1,10 @@
+.project
+.classpath
+.metadata
+org.*
+bin
+build
+.gradle
+run
+
+.DS_Store
