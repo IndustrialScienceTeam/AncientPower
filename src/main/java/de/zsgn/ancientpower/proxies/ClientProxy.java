@@ -1,6 +1,6 @@
-package de.zsgn.mcmod.proxies;
+package de.zsgn.ancientpower.proxies;
 
-import de.zsgn.mcmod.ExampleMod;
+import de.zsgn.ancientpower.AncientPower;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -18,12 +18,12 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent e) {
-        reg(ExampleMod.ancientstone, 0);
+        reg(AncientPower.ancientstone, 0);
     }
     //Nice code by: http://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/first-block/ 
     public static void reg(Block block, int meta) {
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-        .register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(ExampleMod.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+        .register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(AncientPower.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {

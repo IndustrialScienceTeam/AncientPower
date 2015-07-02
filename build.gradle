@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'forge'
 
 version = "0.1"
-group= "de.zsgn.mcmod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "mcmod"
+group= "de.zsgn.ancientpower" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "ancientpower"
 
 minecraft {
     version = "1.8-11.14.3.1450"

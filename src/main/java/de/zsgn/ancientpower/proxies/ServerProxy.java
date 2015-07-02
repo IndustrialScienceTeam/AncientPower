@@ -1,4 +1,4 @@
-package de.zsgn.mcmod.proxies;
+package de.zsgn.ancientpower.proxies;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

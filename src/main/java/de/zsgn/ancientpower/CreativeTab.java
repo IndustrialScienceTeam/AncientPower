@@ -1,4 +1,4 @@
-package de.zsgn.mcmod;
+package de.zsgn.ancientpower;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,13 +9,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class CreativeTab extends CreativeTabs {
 
     public CreativeTab() {
-        super(ExampleMod.MODID);
+        super(AncientPower.MODID);
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
-       return ExampleMod.ancientstone.getItem(null, null);
+       return AncientPower.ancientstone.getItem(null, null);
     }
 
 }

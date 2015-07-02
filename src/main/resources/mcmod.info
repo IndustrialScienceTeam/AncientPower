@@ -1,14 +1,14 @@
 [
 {
-  "modid": "mcmod",
-  "name": "MC mod",
-  "description": "Example placeholder mod.",
+  "modid": "ancientpower",
+  "name": "Ancient Power",
+  "description": "Adds many different gameplay mechanics, related to the idea of a lost civilization",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Finesim97","Singularius"],
-  "credits": "The Forge and FML guys, for making this example",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

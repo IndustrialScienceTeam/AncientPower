@@ -1,6 +1,6 @@
-package de.zsgn.mcmod.blocks;
+package de.zsgn.ancientpower.blocks;
 
-import de.zsgn.mcmod.ExampleMod;
+import de.zsgn.ancientpower.AncientPower;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -8,7 +8,7 @@ public class BlockAncientStone extends Block {
 
     public BlockAncientStone() {
         super(Material.rock);
-        setCreativeTab(ExampleMod.creativeTab);
+        setCreativeTab(AncientPower.creativeTab);
         setUnlocalizedName("ancient-stone");
     }
 

@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "mcmod:blocks/ancient-stone"
-    }
-}

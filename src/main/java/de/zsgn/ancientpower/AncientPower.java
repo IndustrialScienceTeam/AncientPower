@@ -1,7 +1,7 @@
-package de.zsgn.mcmod;
+package de.zsgn.ancientpower;
 
-import de.zsgn.mcmod.blocks.BlockAncientStone;
-import de.zsgn.mcmod.proxies.CommonProxy;
+import de.zsgn.ancientpower.blocks.BlockAncientStone;
+import de.zsgn.ancientpower.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -13,13 +13,13 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
-public class ExampleMod
+@Mod(modid = AncientPower.MODID, version = AncientPower.VERSION)
+public class AncientPower
 {
-    public static final String MODID = "mcmod";
+    public static final String MODID = "ancientpower";
     public static final String VERSION = "0.1";
     
-    @SidedProxy(clientSide="de.zsgn.mcmod.proxies.ClientProxy", serverSide="de.zsgn.mcmod.proxies.ServerProxy")
+    @SidedProxy(clientSide="de.zsgn.ancientpower.proxies.ClientProxy", serverSide="de.zsgn.ancientpower.proxies.ServerProxy")
     public static CommonProxy proxy;
     
     public static CreativeTab creativeTab;
