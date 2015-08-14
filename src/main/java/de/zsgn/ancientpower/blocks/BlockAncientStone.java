@@ -9,7 +9,7 @@ public class BlockAncientStone extends Block {
     public BlockAncientStone() {
         super(Material.rock);
         setCreativeTab(AncientPower.creativeTab);
-        setUnlocalizedName("ancient-stone");
+        setUnlocalizedName(AncientPower.MODID+"."+"ancient-stone");
     }
 
 }
