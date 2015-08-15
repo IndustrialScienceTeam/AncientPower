@@ -15,7 +15,7 @@ public class CreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
-       return AncientPower.ancientstone.getItem(null, null);
+       return AncientPower.proxy.ancientstone.getItem(null, null);
     }
 
 }

@@ -8,7 +8,7 @@ public class BlockAncientStone extends Block {
 
     public BlockAncientStone() {
         super(Material.rock);
-        setCreativeTab(AncientPower.creativeTab);
+        setCreativeTab(AncientPower.proxy.creativeTab);
         setUnlocalizedName(AncientPower.MODID+"."+"ancient-stone");
     }
 
