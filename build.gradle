@@ -22,7 +22,7 @@ group= "de.zsgn.ancientpower" // http://maven.apache.org/guides/mini/guide-namin
 archivesBaseName = "ancientpower"
 
 minecraft {
-    version = "1.8-11.14.3.1450"
+    version = "1.8-11.14.3.1502"
     runDir = "eclipse"
     
     // the mappings can be changed at any time, and must be in the following format.
