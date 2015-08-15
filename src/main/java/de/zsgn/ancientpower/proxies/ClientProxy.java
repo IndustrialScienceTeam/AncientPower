@@ -1,6 +1,7 @@
 package de.zsgn.ancientpower.proxies;
 
 import de.zsgn.ancientpower.AncientPower;
+import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -40,12 +41,13 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent e) {
         super.init(e);
-        reg(ancientstone, 0);
+        reg(ancientstone,"bla", 0);
+        reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
     }
     //Nice code by: http://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/first-block/ 
-    public static void reg(Block block, int meta) {
+    public static void reg(Block block,String modelname, int meta) {
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-        .register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(AncientPower.MODID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+        .register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(AncientPower.MODID  +":"+ modelname, "inventory"));
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {
