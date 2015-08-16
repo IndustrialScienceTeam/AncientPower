@@ -1,2 +1,4 @@
 Thanks for Posting an example for 1.8 fluids:
 https://github.com/MinecraftForge/MinecraftForge/commit/07038f8342599bddcfc835f0754ac85144d047b0
+A clean and simple travis ci script:
+https://github.com/BuildCraft/BuildCraft/blob/7.1.x/.travis.yml
