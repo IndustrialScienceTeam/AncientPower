@@ -17,16 +17,17 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
 import net.minecraftforge.fluids.ItemFluidContainer;
 
-public class ItemChargeableCrystal extends ItemFluidContainer {
+public class ItemChargeableCrystal extends Item implements IFluidContainerItem{
     public final static ItemChargeableCrystal INSTANCE=new ItemChargeableCrystal();
     public final static String NAME="chargeablecrystal";
 
     public final static int CAPACITY=4000;
     public final static int RANGE=3;
     
+    protected ItemFluidContainer fluidContainer;
     
     protected ItemChargeableCrystal() {
-        super(0,CAPACITY);
+        fluidContainer=new  ItemFluidContainer(0, CAPACITY);
         this.setUnlocalizedName(AncientPower.MODID+"."+NAME);
         this.setCreativeTab(AncientPower.proxy.creativeTab);
         this.setMaxStackSize(1);
@@ -75,7 +76,27 @@ public class ItemChargeableCrystal extends ItemFluidContainer {
         if(getFluid(stack)!=null){
            amount=getFluid(stack).amount;
         }
-        tooltip.add(amount+"/"+capacity);
+        tooltip.add(amount+"/"+getCapacity(stack));
+    }
+
+    @Override
+    public FluidStack getFluid(ItemStack container) {
+        return fluidContainer.getFluid(container);
+    }
+
+    @Override
+    public int getCapacity(ItemStack container) {
+        return fluidContainer.getCapacity(container);
+    }
+
+    @Override
+    public int fill(ItemStack container, FluidStack resource, boolean doFill) {
+        return fluidContainer.fill(container, resource, doFill);
+    }
+
+    @Override
+    public FluidStack drain(ItemStack container, int maxDrain, boolean doDrain) {
+        return fluidContainer.drain(container, maxDrain, doDrain);
     }
 
 }
