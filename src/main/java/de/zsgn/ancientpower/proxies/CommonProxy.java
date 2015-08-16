@@ -2,6 +2,7 @@ package de.zsgn.ancientpower.proxies;
 
 import de.zsgn.ancientpower.AncientPower;
 import de.zsgn.ancientpower.CreativeTab;
+import de.zsgn.ancientpower.ItemChargeableCrystal;
 import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
@@ -29,6 +30,7 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockLiquidEnergy.instance,BlockLiquidEnergy.NAME);
         GameRegistry.registerBlock(BlockCrystalEnergyOre.INSTANCE, BlockCrystalEnergyOre.NAME);
         GameRegistry.registerBlock(ancientstone, "ancient-stone");
+        GameRegistry.registerItem(ItemChargeableCrystal.INSTANCE, ItemChargeableCrystal.NAME);
     }
      public void init(FMLInitializationEvent e) {
          
