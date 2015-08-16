@@ -19,8 +19,8 @@ import net.minecraftforge.fluids.ItemFluidContainer;
 public class ItemChargeableCrystal extends ItemFluidContainer {
     public final static ItemChargeableCrystal INSTANCE=new ItemChargeableCrystal();
     public final static String NAME="chargeablecrystal";
-    
-    public final static int CAPACITY=3000;
+
+    public final static int CAPACITY=4000;
     public final static int RANGE=3;
     
     
