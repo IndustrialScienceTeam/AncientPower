@@ -48,6 +48,19 @@ public class ItemChargeableCrystal extends ItemFluidContainer {
         return super.onItemRightClick(itemStackIn, worldIn, playerIn);
     }
     @Override
+    public boolean showDurabilityBar(ItemStack stack)
+    {
+        return true;
+    }
+    @Override
+    public double getDurabilityForDisplay(ItemStack is){
+        if (is.hasTagCompound() && is.getTagCompound().hasKey("Fluid"))
+        {
+            return 1.0-(is.getTagCompound().getCompoundTag("Fluid").getInteger("Amount")/(double)CAPACITY);
+        }
+        return 0;
+    }
+    @Override
     public boolean canItemEditBlocks()
     {
         return true;
