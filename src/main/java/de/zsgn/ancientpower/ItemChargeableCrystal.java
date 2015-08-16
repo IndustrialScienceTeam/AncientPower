@@ -28,6 +28,7 @@ public class ItemChargeableCrystal extends ItemFluidContainer {
         super(0,CAPACITY);
         this.setUnlocalizedName(AncientPower.MODID+"."+NAME);
         this.setCreativeTab(AncientPower.proxy.creativeTab);
+        this.setMaxStackSize(1);
     }
 
     @Override
