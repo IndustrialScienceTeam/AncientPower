@@ -2,11 +2,11 @@ package de.zsgn.ancientpower.proxies;
 
 import de.zsgn.ancientpower.AncientPower;
 import de.zsgn.ancientpower.CreativeTab;
-import de.zsgn.ancientpower.ItemChargeableCrystal;
 import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
+import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;

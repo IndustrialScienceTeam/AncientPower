@@ -1,8 +1,9 @@
-package de.zsgn.ancientpower;
+package de.zsgn.ancientpower.items;
 
 import java.util.Iterator;
 import java.util.List;
 
+import de.zsgn.ancientpower.AncientPower;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
