@@ -1,6 +1,6 @@
 {
         "textures": {
-        "all": "ancientpower:block/crystalenergyore"
+        "all": "ancientpower:chargeablecrystal"
     },
 
     "display": {
@@ -16,16 +16,16 @@
         }
     },
             "elements":[
-        {   "from": [ 5, 5,5],
-            "to": [ 11, 11, 11],
+        {   "from": [ 4.5, 4.5,4.5],
+            "to": [ 11.5, 11.5, 11.5],
              
                "faces": {
-                "down":  { "texture": "#all", "cullface": "down" },
-                "up":    { "texture": "#all", "cullface": "up" },
-                "north": { "texture": "#all", "cullface": "north" },
-                "south": { "texture": "#all", "cullface": "south" },
-                "west":  { "texture": "#all", "cullface": "west" },
-                "east":  { "texture": "#all", "cullface": "east" }
+                "down":  { "texture": "#all", "cullface": "down" , "uv":[0,0,16,16]},
+                "up":    { "texture": "#all", "cullface": "up", "uv":[0,0,16,16] },
+                "north": { "texture": "#all", "cullface": "north", "uv":[0,0,16,16] },
+                "south": { "texture": "#all", "cullface": "south" , "uv":[0,0,16,16]},
+                "west":  { "texture": "#all", "cullface": "west", "uv":[0,0,16,16] },
+                "east":  { "texture": "#all", "cullface": "east", "uv":[0,0,16,16] }
             }
         }]
 }
