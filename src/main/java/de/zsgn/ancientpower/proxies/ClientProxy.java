@@ -2,6 +2,7 @@ package de.zsgn.ancientpower.proxies;
 
 import de.zsgn.ancientpower.AncientPower;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
+import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
@@ -47,6 +48,7 @@ public class ClientProxy extends CommonProxy {
         .register(ItemChargeableCrystal.INSTANCE, 0, new ModelResourceLocation(AncientPower.MODID  +":"+ItemChargeableCrystal.NAME, "inventory"));
         reg(ancientstone,"bla", 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
+        reg(BlockCrystalframe.INSTANCE,BlockCrystalEnergyOre.NAME,0);
     }
     //Nice code by: http://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/first-block/ 
     public static void reg(Block block,String modelname, int meta) {
