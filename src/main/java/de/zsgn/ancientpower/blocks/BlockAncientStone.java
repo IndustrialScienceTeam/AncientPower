@@ -11,15 +11,12 @@ import net.minecraft.item.Item;
 
 public class BlockAncientStone extends Block {
 	public final static String NAME="ancientstone";
-	public final static BlockAncientStone INSTANCE=new BlockAncientStone(Item.getItemFromBlock(BlockBrokenAncientStone.INSTANCE));
-	
-	private int meta;
-	private Item drop;
+	public final static BlockAncientStone INSTANCE=new BlockAncientStone();
 	
 	
-	public BlockAncientStone(Item drop) {
+	
+	public BlockAncientStone() {
 		super(Material.rock);
-		this.drop = drop;
 		this.setUnlocalizedName(AncientPower.MODID+"."+NAME);
 		this.setCreativeTab(AncientPower.proxy.creativeTab);
 		this.setHardness(5F);
@@ -28,7 +25,7 @@ public class BlockAncientStone extends Block {
 	}
 	@Override
 	public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
-	    return this.drop;
+	    return Item.getItemFromBlock(BlockBrokenAncientStone.INSTANCE);
 	}
 
 	
