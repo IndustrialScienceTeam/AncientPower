@@ -1,6 +1,7 @@
 package de.zsgn.ancientpower.proxies;
 
 import de.zsgn.ancientpower.AncientPower;
+import de.zsgn.ancientpower.blocks.BlockAncientBrickStairs;
 import de.zsgn.ancientpower.blocks.BlockAncientBricks;
 import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
