@@ -17,5 +17,9 @@ public class BlockCrystalframe extends Block {
         this.setHarvestLevel("pickaxe", 2);
 
     }
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
 
 }
