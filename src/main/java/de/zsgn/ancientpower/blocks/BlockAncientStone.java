@@ -3,6 +3,7 @@ package de.zsgn.ancientpower.blocks;
 import de.zsgn.ancientpower.AncientPower;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
 
 public class BlockAncientStone extends Block {
 	public final static String NAME="ancientstone";
