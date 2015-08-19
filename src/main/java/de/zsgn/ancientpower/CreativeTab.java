@@ -1,5 +1,7 @@
 package de.zsgn.ancientpower;
 
+import de.zsgn.ancientpower.blocks.BlockAncientBricks;
+import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -15,7 +17,7 @@ public class CreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
-       return AncientPower.proxy.ancientstone.getItem(null, null);
+       return BlockAncientBricks.INSTANCE.getItem(null, null);
     }
 
 }

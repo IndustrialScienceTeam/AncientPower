@@ -24,16 +24,13 @@ public class CommonProxy {
     
     public static CreativeTab creativeTab;
     
-    public static Block ancientstone;
 
     public void preInit(FMLPreInitializationEvent e) {
         creativeTab=new CreativeTab();
 
-        ancientstone=new BlockAncientStone();
         FluidRegistry.registerFluid(FluidLiquidEnergy.instance);
         GameRegistry.registerBlock(BlockLiquidEnergy.instance,BlockLiquidEnergy.NAME);
         GameRegistry.registerBlock(BlockCrystalEnergyOre.INSTANCE, BlockCrystalEnergyOre.NAME);
-        GameRegistry.registerBlock(ancientstone, "ancient-stone");
         GameRegistry.registerItem(ItemChargeableCrystal.INSTANCE, ItemChargeableCrystal.NAME);
         GameRegistry.registerBlock(BlockCrystalframe.INSTANCE, BlockCrystalframe.NAME);
         GameRegistry.registerBlock(BlockAncientBricks.INSTANCE, BlockAncientBricks.NAME);
