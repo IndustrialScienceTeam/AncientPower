@@ -53,7 +53,7 @@ public class ClientProxy extends CommonProxy {
         reg(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME, 0);
         reg(BlockAncientBricks.INSTANCE,BlockAncientBricks.NAME, 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
-        reg(BlockCrystalframe.INSTANCE,BlockCrystalEnergyOre.NAME,0);
+        reg(BlockCrystalframe.INSTANCE,BlockCrystalframe.NAME,0);
         
     }
     //Nice code by: http://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/first-block/ 
