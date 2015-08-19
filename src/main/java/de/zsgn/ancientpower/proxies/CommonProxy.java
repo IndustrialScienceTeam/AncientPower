@@ -35,6 +35,7 @@ public class CommonProxy {
         GameRegistry.registerItem(ItemChargeableCrystal.INSTANCE, ItemChargeableCrystal.NAME);
         GameRegistry.registerBlock(BlockCrystalframe.INSTANCE, BlockCrystalframe.NAME);
         GameRegistry.registerBlock(BlockAncientBricks.INSTANCE, BlockAncientBricks.NAME);
+        GameRegistry.registerBlock(BlockAncientStone.INSTANCE, BlockAncientStone.NAME);
     }
      public void init(FMLInitializationEvent e) {
          
