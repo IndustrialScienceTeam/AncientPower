@@ -1,4 +1,5 @@
 tile.ancientpower.ancientstone.name=Ancient Stone
+tile.ancientpower.brokenancientstone.name=Ancient broken Stone
 tile.ancientpower.Blockliquid_energy.name=Liquid Energy
 fluid.ancientpower.liquid_energy=Liquid Energy
 tile.ancientpower.crystalenergyore.name=Crystal Energy Ore
