@@ -3,7 +3,6 @@ package de.zsgn.ancientpower.blocks;
 import java.util.Random;
 
 import de.zsgn.ancientpower.AncientPower;
-import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -13,7 +12,6 @@ public class BlockAncientStone extends Block {
 	public final static String NAME="ancientstone";
 	public final static BlockAncientStone INSTANCE=new BlockAncientStone(Item.getItemFromBlock(BlockBrokenAncientStone.INSTANCE));
 	
-	private int meta;
 	private Item drop;
 	
 	
