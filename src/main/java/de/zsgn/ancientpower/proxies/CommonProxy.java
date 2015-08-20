@@ -11,10 +11,12 @@ import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
+import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,8 +45,9 @@ public class CommonProxy {
         ModCrafting.initCrafting();
         
     }
-     public void init(FMLInitializationEvent e) {
-    	
+     public void init(FMLInitializationEvent e){
+         DimensionManager.registerProviderType(AncientPowerWorldProvider.DIMENSIONID, AncientPowerWorldProvider.class, false);
+    	DimensionManager.registerDimension(AncientPowerWorldProvider.DIMENSIONID, AncientPowerWorldProvider.DIMENSIONID);
        
          
     }
