@@ -11,8 +11,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ModCrafting {
 
 	public static void initCrafting() {
-		GameRegistry.addShapedRecipe(new ItemStack(BlockAncientBricks.INSTANCE,4), "##", "##", '#', BlockAncientStone.INSTANCE);
-		GameRegistry.addSmelting( BlockBrokenAncientStone.INSTANCE, new ItemStack(BlockAncientStone.INSTANCE), 0.5F);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockAncientBricks.INSTANCE,4), "##", "##", '#', BlockAncientStone.INSTANCE); //Aus 4 ANcientStone werden 4 Ancient Bricks
+		GameRegistry.addSmelting( BlockBrokenAncientStone.INSTANCE, new ItemStack(BlockAncientStone.INSTANCE), 0.5F);//aus Ancient broken stone wird im ofen ancient stone
 	}
 
 
