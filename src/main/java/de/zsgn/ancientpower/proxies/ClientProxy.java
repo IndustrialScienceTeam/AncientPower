@@ -53,6 +53,7 @@ public class ClientProxy extends CommonProxy {
         reg(BlockAncientStone.INSTANCE, BlockAncientStone.NAME, 0);
         reg(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME, 0);
         reg(BlockAncientBricks.INSTANCE,BlockAncientBricks.NAME, 0);
+        reg(BlockAncientBrickStairs.INSTANCE,BlockAncientBrickStairs.NAME, 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
         reg(BlockCrystalframe.INSTANCE,BlockCrystalframe.NAME,0);
         
