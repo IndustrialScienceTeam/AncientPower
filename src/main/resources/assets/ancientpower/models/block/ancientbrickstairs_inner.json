@@ -3,6 +3,6 @@
     "textures": {
         "bottom": "ancientpower:blocks/ancientbricks",
         "top": "ancientpower:blocks/ancientbricks",
-        "side": "ancientpower:blocks/:ancientbricks"
+        "side": "ancientpower:blocks/ancientbricks"
     }
 }
