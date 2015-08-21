@@ -13,6 +13,7 @@ import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockGatewayPillar;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
+import de.zsgn.ancientpower.dimension.worldgen.SimpleWorldGen;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
@@ -45,6 +46,7 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME);
         GameRegistry.registerBlock(BlockGatewayPillar.INSTANCE, BlockGatewayPillar.NAME);
         
+        GameRegistry.registerWorldGenerator(new SimpleWorldGen(), 1); //1 is the weight for generator, heavier generators run later
         
         ModCrafting.initCrafting();
         
