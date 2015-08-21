@@ -10,6 +10,7 @@ import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockCrystalframe;
+import de.zsgn.ancientpower.blocks.BlockGatewayPillar;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
@@ -42,6 +43,9 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockAncientBrickSlabs.INSTANCE, BlockAncientBrickSlabs.NAME);
         GameRegistry.registerBlock(BlockAncientStone.INSTANCE, BlockAncientStone.NAME);
         GameRegistry.registerBlock(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME);
+        GameRegistry.registerBlock(BlockGatewayPillar.INSTANCE, BlockGatewayPillar.NAME);
+        
+        
         ModCrafting.initCrafting();
         
     }

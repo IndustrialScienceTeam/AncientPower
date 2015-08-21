@@ -28,22 +28,4 @@ public class BlockAncientBricks extends Block {
         this.setHarvestLevel("pickaxe",2);
     }
 
-    @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos,
-            IBlockState state, EntityPlayer playerIn, EnumFacing blockside,
-            float hitX, float hitY, float hitZ) {
-        Side side = FMLCommonHandler.instance().getEffectiveSide();
-        System.out.println(side);
-        if (side == Side.SERVER&&playerIn instanceof EntityPlayerMP){
-            WorldServer worldserver = (WorldServer)worldIn;
-            EntityPlayerMP playermp = (EntityPlayerMP)playerIn;
-            System.out.println(1);
-            if (playerIn.ridingEntity == null && playerIn.riddenByEntity == null && playerIn instanceof EntityPlayer)
-            {
-                playermp.mcServer.getConfigurationManager().transferPlayerToDimension(playermp, AncientPowerWorldProvider.DIMENSIONID);
-            }
-        }
-        return true;
-    }
-
 }
