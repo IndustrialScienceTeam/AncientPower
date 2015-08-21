@@ -14,6 +14,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class SimpleWorldGen implements IWorldGenerator {
@@ -33,7 +34,6 @@ public class SimpleWorldGen implements IWorldGenerator {
                     z=random.nextInt(16); 
                     y=MathHelper.clamp_int(y, 5, AncientPowerChunkProvider.MAXY);
                     new WorldGenMinable(blockgen.blockstate, blockgen.blockamount, replaces).generate(world, random, new BlockPos(x, y, z));
-                    System.out.println("Generated at "+new BlockPos(x, y, z));
                 }
             }
         }
