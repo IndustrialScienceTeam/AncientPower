@@ -18,7 +18,7 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class SimpleWorldGen implements IWorldGenerator {
-    protected final BlockGen[] blockgens={new BlockGen(0, Blocks.dirt.getDefaultState(), 8)};
+    protected final BlockGen[] blockgens={new BlockGen(1, Blocks.dirt.getDefaultState(), 8)};
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world,
             IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
