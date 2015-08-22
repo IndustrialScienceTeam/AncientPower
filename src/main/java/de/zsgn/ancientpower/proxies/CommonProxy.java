@@ -14,6 +14,7 @@ import de.zsgn.ancientpower.blocks.BlockGatewayPillar;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.blocks.BlockScrapSoil;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
+import de.zsgn.ancientpower.dimension.worldgen.ScrapSoilgen;
 import de.zsgn.ancientpower.dimension.worldgen.SimpleWorldGen;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
@@ -56,7 +57,7 @@ public class CommonProxy {
      public void init(FMLInitializationEvent e){
          DimensionManager.registerProviderType(AncientPowerWorldProvider.DIMENSIONID, AncientPowerWorldProvider.class, false);
     	DimensionManager.registerDimension(AncientPowerWorldProvider.DIMENSIONID, AncientPowerWorldProvider.DIMENSIONID);
-       
+    	GameRegistry.registerWorldGenerator(new ScrapSoilgen(), 0);
          
     }
      public void postInit(FMLPostInitializationEvent e) {
