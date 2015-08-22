@@ -12,6 +12,7 @@ import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockGatewayPillar;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
+import de.zsgn.ancientpower.blocks.BlockScrapSoil;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import de.zsgn.ancientpower.dimension.worldgen.SimpleWorldGen;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
@@ -39,6 +40,7 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockCrystalEnergyOre.INSTANCE, BlockCrystalEnergyOre.NAME);
         GameRegistry.registerItem(ItemChargeableCrystal.INSTANCE, ItemChargeableCrystal.NAME);
         GameRegistry.registerBlock(BlockCrystalframe.INSTANCE, BlockCrystalframe.NAME);
+        GameRegistry.registerBlock(BlockScrapSoil.INSTANCE, BlockScrapSoil.NAME);
         GameRegistry.registerBlock(BlockAncientBricks.INSTANCE, BlockAncientBricks.NAME);
         GameRegistry.registerBlock(BlockAncientBrickStairs.INSTANCE, BlockAncientBrickStairs.NAME);
         GameRegistry.registerBlock(BlockAncientBrickSlabs.INSTANCE, BlockAncientBrickSlabs.NAME);

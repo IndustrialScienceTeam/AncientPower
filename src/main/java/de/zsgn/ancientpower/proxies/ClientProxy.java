@@ -8,6 +8,7 @@ import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
+import de.zsgn.ancientpower.blocks.BlockScrapSoil;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -52,6 +53,7 @@ public class ClientProxy extends CommonProxy {
         .register(ItemChargeableCrystal.INSTANCE, 0, new ModelResourceLocation(AncientPower.MODID  +":"+ItemChargeableCrystal.NAME, "inventory"));
         reg(BlockAncientStone.INSTANCE, BlockAncientStone.NAME, 0);
         reg(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME, 0);
+        reg(BlockScrapSoil.INSTANCE, BlockScrapSoil.NAME, 0);
         reg(BlockAncientBricks.INSTANCE,BlockAncientBricks.NAME, 0);
         reg(BlockAncientBrickStairs.INSTANCE,BlockAncientBrickStairs.NAME, 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
