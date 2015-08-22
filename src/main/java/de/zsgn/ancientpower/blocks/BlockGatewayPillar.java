@@ -1,5 +1,7 @@
 package de.zsgn.ancientpower.blocks;
 
+import java.util.List;
+
 import com.sun.org.apache.regexp.internal.RE;
 
 import de.zsgn.ancientpower.AncientPower;
@@ -12,6 +14,8 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.command.IEntitySelector;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
@@ -44,14 +48,23 @@ public class BlockGatewayPillar extends Block {
         if(playerIn.isSneaking()){
             return false;
         }
+       // worldIn.playSoundEffect(pos.getX()+0.5D, pos.getY()+0.5D, pos.getZ()+0.5D, "portal.travel", 1.0F, worldIn.rand.nextFloat() * 0.1F * 0.9F);
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER&&playerIn instanceof EntityPlayerMP){
+            BlockPos firstcorner=pos.add((AncientPowerTeleporter.ROOMSIZE-1)/2, AncientPowerTeleporter.ROOMHEIGHT, (AncientPowerTeleporter.ROOMSIZE-1)/2);
+            BlockPos secondcorner=pos.add(-(AncientPowerTeleporter.ROOMSIZE-1)/2, 1, -(AncientPowerTeleporter.ROOMSIZE-1)/2);
+            List entitylist=worldIn.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(secondcorner, firstcorner));
+            System.out.println(entitylist);
             EntityPlayerMP playermp = (EntityPlayerMP)playerIn;
-            if (playerIn.ridingEntity == null && playerIn.riddenByEntity == null && playerIn instanceof EntityPlayer)
-            {
-                int dim=playermp.dimension==AncientPowerWorldProvider.DIMENSIONID?0:AncientPowerWorldProvider.DIMENSIONID;
-                playermp.mcServer.getConfigurationManager().transferPlayerToDimension(playermp, dim, new AncientPowerTeleporter( playermp.mcServer.worldServerForDimension(dim)));
+            int dim=playermp.dimension==AncientPowerWorldProvider.DIMENSIONID?0:AncientPowerWorldProvider.DIMENSIONID;
+            for (Object object : entitylist) {
+                if(object instanceof EntityPlayerMP){
+                    EntityPlayerMP toteleport=(EntityPlayerMP) object;
+                    playermp.mcServer.getConfigurationManager().transferPlayerToDimension(toteleport, dim, new AncientPowerTeleporter( toteleport.mcServer.worldServerForDimension(dim), toteleport.getPositionVector().xCoord-pos.getX(),toteleport.getPositionVector().zCoord-pos.getZ()));
+                    
+                }
             }
         }
+
         return true;
     }
     @Override
@@ -64,15 +77,15 @@ public class BlockGatewayPillar extends Block {
             if(bottomblockstate.getBlock()!=INSTANCE)
                 break;
         }
-            return state.withProperty(RELPOS, i);
-        
+        return state.withProperty(RELPOS, i);
+
     }
     @Override
     public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos,
             IBlockState state) {
         // TODO Auto-generated method stub
         return super.getCollisionBoundingBox(worldIn, pos, state);
-       
+
     }
     public int getMetaFromState(IBlockState state)
     {

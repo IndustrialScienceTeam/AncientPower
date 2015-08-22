@@ -23,8 +23,8 @@ import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
 public class AncientPowerTeleporter extends Teleporter {
-    public final int ROOMSIZE=9;
-    public final int ROOMHEIGHT=6;
+    public final static int ROOMSIZE=9;
+    public final static int ROOMHEIGHT=6;
     public final int MAXHEIGHT=AncientPowerChunkProvider.MAXY-(2*ROOMHEIGHT);
     public final int MINHEIGHT=5;
 
@@ -32,11 +32,16 @@ public class AncientPowerTeleporter extends Teleporter {
     protected final Random random;
     protected final LongHashMap destinationCoordinateCache = new LongHashMap();
     protected final List destinationCoordinateKeys = Lists.newArrayList();
+    
+    protected double relativeX;
+    protected double relativeZ;
 
-    public AncientPowerTeleporter(WorldServer worldIn) {
+    public AncientPowerTeleporter(WorldServer worldIn, double relativeX, double relativeZ) {
         super(worldIn);
         this.worldServerInstance = worldIn;
         this.random = new Random(worldIn.getSeed());
+        this.relativeX=relativeX;
+        this.relativeZ=relativeZ;
     }
 
     public void placeInPortal(Entity entityIn, float rotationYaw)
@@ -107,9 +112,9 @@ public class AncientPowerTeleporter extends Teleporter {
                 this.destinationCoordinateKeys.add(Long.valueOf(k));
             }
             //TODO use strange teleport rotation field frome entity
-            double targetx = (double)((BlockPos)targetpos).getX() + 1D;
+            double targetx = (double)((BlockPos)targetpos).getX() + relativeX;
             double targety = (double)((BlockPos)targetpos).getY() + 1D;
-            double targetz = (double)((BlockPos)targetpos).getZ() + 1D;
+            double targetz = (double)((BlockPos)targetpos).getZ() + relativeZ;
             entityIn.motionX = entityIn.motionY = entityIn.motionZ = 0.0D;
             entityIn.setLocationAndAngles(targetx, targety, targetz, entityIn.rotationYaw, entityIn.rotationPitch);
             return true;

@@ -28,7 +28,7 @@ public class ScrapSoilgen implements IWorldGenerator {
         case 1: //End
 
             break;
-            
+            //TODO Get dimension id from a config or sth like that
         case 7:// Own world
         	this.runGenerator(this.ScrapSoilgen, world, random, chunkX, chunkZ, 20, 0, 64);
             break;
