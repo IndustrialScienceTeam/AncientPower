@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "relpos=0": { "model": "ancientpower:ancientbricks" },
+        "relpos=1": { "model": "ancientpower:ancientstone" },
+        "relpos=2": { "model": "ancientpower:crystalenergyore" }
+    }
+}
