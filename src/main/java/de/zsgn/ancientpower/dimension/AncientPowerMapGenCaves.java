@@ -12,7 +12,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.MapGenCaves;
 
 public class AncientPowerMapGenCaves extends MapGenCaves {
-public static final Block[] replaceableblocks={BlockAncientStone.INSTANCE};
+public static final Block[] replaceableblocks={BlockAncientStone.INSTANCE, Blocks.dirt};
     @Override
     protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX,
             int chunkZ, boolean foundTop, IBlockState state, IBlockState up) {
