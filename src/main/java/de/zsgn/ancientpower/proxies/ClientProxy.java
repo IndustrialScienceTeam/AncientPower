@@ -10,6 +10,7 @@ import de.zsgn.ancientpower.blocks.BlockCrystalframe;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.blocks.BlockScrapSoil;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
+import de.zsgn.ancientpower.items.ItemMetalPiece;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -51,6 +52,8 @@ public class ClientProxy extends CommonProxy {
         super.init(e);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
         .register(ItemChargeableCrystal.INSTANCE, 0, new ModelResourceLocation(AncientPower.MODID  +":"+ItemChargeableCrystal.NAME, "inventory"));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
+        .register(ItemMetalPiece.INSTANCE, 0, new ModelResourceLocation(AncientPower.MODID  +":"+ItemMetalPiece.NAME, "inventory"));
         reg(BlockAncientStone.INSTANCE, BlockAncientStone.NAME, 0);
         reg(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME, 0);
         reg(BlockScrapSoil.INSTANCE, BlockScrapSoil.NAME, 0);
@@ -58,6 +61,7 @@ public class ClientProxy extends CommonProxy {
         reg(BlockAncientBrickStairs.INSTANCE,BlockAncientBrickStairs.NAME, 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
         reg(BlockCrystalframe.INSTANCE,BlockCrystalframe.NAME,0);
+
         
     }
     //Nice code by: http://bedrockminer.jimdo.com/modding-tutorials/basic-modding-1-8/first-block/ 
