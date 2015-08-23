@@ -18,6 +18,7 @@ import de.zsgn.ancientpower.dimension.worldgen.ScrapSoilgen;
 import de.zsgn.ancientpower.dimension.worldgen.SimpleWorldGen;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
+import de.zsgn.ancientpower.items.ItemMetalPiece;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.DimensionManager;
@@ -40,6 +41,7 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockLiquidEnergy.instance,BlockLiquidEnergy.NAME);
         GameRegistry.registerBlock(BlockCrystalEnergyOre.INSTANCE, BlockCrystalEnergyOre.NAME);
         GameRegistry.registerItem(ItemChargeableCrystal.INSTANCE, ItemChargeableCrystal.NAME);
+        GameRegistry.registerItem(ItemMetalPiece.INSTANCE, ItemMetalPiece.NAME);
         GameRegistry.registerBlock(BlockCrystalframe.INSTANCE, BlockCrystalframe.NAME);
         GameRegistry.registerBlock(BlockScrapSoil.INSTANCE, BlockScrapSoil.NAME);
         GameRegistry.registerBlock(BlockAncientBricks.INSTANCE, BlockAncientBricks.NAME);
