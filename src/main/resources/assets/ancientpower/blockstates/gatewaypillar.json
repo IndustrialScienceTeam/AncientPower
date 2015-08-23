@@ -1,7 +1,7 @@
 {
     "variants": {
-        "relpos=0": { "model": "ancientpower:ancientbricks" },
-        "relpos=1": { "model": "ancientpower:ancientstone" },
-        "relpos=2": { "model": "ancientpower:crystalenergyore" }
+        "relpos=0": { "model": "ancientpower:bottom_gatewaypillar" },
+        "relpos=1": { "model": "ancientpower:middle_gatewaypillar" },
+        "relpos=2": { "model": "ancientpower:top_gatewaypillar" }
     }
 }
