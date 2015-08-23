@@ -6,3 +6,5 @@ tile.ancientpower.crystalenergyore.name=Crystal Energy Ore
 item.ancientpower.chargeablecrystal.name=Chargeable Energy Crystal
 itemGroup.ancientpower=Ancient Power
 tile.ancientpower.ancientbricks.name=Ancient Brick
+tile.ancientpower.gatewaypillar.name=Gateway Pillar
+msg.ancientpower.gatewaypillar.incomplete=The pillar is not completed!

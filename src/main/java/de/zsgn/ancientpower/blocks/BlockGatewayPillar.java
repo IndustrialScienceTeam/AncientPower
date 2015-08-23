@@ -55,7 +55,7 @@ public class BlockGatewayPillar extends Block {
         BlockPos bottompillar=getBottomofPillar(worldIn, pos);
         if(bottompillar==null){
             if(FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER)
-                playerIn.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("msg."+NAME+".incomplete")));
+                playerIn.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("msg."+AncientPower.MODID+"."+NAME+".incomplete")));
             return false;
         }else{
             teleport(worldIn, bottompillar);

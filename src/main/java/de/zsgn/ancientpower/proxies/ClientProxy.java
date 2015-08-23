@@ -7,6 +7,7 @@ import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.blocks.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.BlockCrystalframe;
+import de.zsgn.ancientpower.blocks.BlockGatewayPillar;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import de.zsgn.ancientpower.blocks.BlockScrapSoil;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
@@ -61,6 +62,7 @@ public class ClientProxy extends CommonProxy {
         reg(BlockAncientBrickStairs.INSTANCE,BlockAncientBrickStairs.NAME, 0);
         reg(BlockCrystalEnergyOre.INSTANCE,BlockCrystalEnergyOre.NAME ,0);
         reg(BlockCrystalframe.INSTANCE,BlockCrystalframe.NAME,0);
+        reg(BlockGatewayPillar.INSTANCE, BlockGatewayPillar.NAME,0);
 
         
     }
