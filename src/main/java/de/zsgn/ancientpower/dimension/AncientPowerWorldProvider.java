@@ -11,8 +11,7 @@ import net.minecraft.world.gen.MapGenBase;
 //import net.minecraft.world.gen.AncientPowerChunkProvider;
 
 public class AncientPowerWorldProvider extends WorldProvider {
-    public final static String NAME="Name here";
-    //TODO Look there
+    public final static String NAME="The Extinct Realm";
     public static int DIMENSIONID=7;
     @Override
     public String getDimensionName() {
