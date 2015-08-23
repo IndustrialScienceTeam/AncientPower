@@ -1,7 +1,7 @@
 package de.zsgn.ancientpower;
 
 import de.zsgn.ancientpower.blocks.BlockAncientBricks;
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;

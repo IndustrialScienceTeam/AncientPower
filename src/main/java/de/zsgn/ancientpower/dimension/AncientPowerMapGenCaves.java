@@ -1,6 +1,6 @@
 package de.zsgn.ancientpower.dimension;
 
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.BlockStairs;

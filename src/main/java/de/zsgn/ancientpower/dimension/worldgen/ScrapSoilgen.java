@@ -3,8 +3,8 @@ package de.zsgn.ancientpower.dimension.worldgen;
 import java.util.Random;
 
 import de.zsgn.ancientpower.AncientPower;
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
-import de.zsgn.ancientpower.blocks.BlockScrapSoil;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockScrapSoil;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;

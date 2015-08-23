@@ -1,7 +1,7 @@
 package de.zsgn.ancientpower;
 
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import de.zsgn.ancientpower.proxies.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;

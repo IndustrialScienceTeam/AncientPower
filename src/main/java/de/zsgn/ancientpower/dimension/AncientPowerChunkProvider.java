@@ -9,7 +9,7 @@ import java.util.Random;
 import com.google.common.collect.Maps;
 
 import de.zsgn.ancientpower.AncientPower;
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.BlockState;

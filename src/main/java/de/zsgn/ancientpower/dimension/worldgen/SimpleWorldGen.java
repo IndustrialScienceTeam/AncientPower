@@ -2,7 +2,7 @@ package de.zsgn.ancientpower.dimension.worldgen;
 
 import java.util.Random;
 
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import de.zsgn.ancientpower.dimension.AncientPowerChunkProvider;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import net.minecraft.block.Block;

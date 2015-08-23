@@ -1,4 +1,4 @@
-package de.zsgn.ancientpower.blocks;
+package de.zsgn.ancientpower.blocks.env;
 
 import java.util.Random;
 

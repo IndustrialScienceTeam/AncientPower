@@ -2,8 +2,8 @@ package de.zsgn.ancientpower;
 
 
 import de.zsgn.ancientpower.blocks.BlockAncientBricks;
-import de.zsgn.ancientpower.blocks.BlockAncientStone;
-import de.zsgn.ancientpower.blocks.BlockBrokenAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
+import de.zsgn.ancientpower.blocks.env.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.items.ItemMetalPiece;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

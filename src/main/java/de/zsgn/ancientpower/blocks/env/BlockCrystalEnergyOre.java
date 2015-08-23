@@ -1,8 +1,9 @@
-package de.zsgn.ancientpower.blocks;
+package de.zsgn.ancientpower.blocks.env;
 
 import javax.tools.ToolProvider;
 
 import de.zsgn.ancientpower.AncientPower;
+import de.zsgn.ancientpower.blocks.BlockLiquidEnergy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
