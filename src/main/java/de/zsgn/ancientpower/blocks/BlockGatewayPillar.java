@@ -16,12 +16,16 @@ import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.IEntitySelector;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
@@ -48,31 +52,55 @@ public class BlockGatewayPillar extends Block {
         if(playerIn.isSneaking()){
             return false;
         }
-       // worldIn.playSoundEffect(pos.getX()+0.5D, pos.getY()+0.5D, pos.getZ()+0.5D, "portal.travel", 1.0F, worldIn.rand.nextFloat() * 0.1F * 0.9F);
-        if (FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER&&playerIn instanceof EntityPlayerMP){
+        BlockPos bottompillar=getBottomofPillar(worldIn, pos);
+        if(bottompillar==null){
+            if(FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER)
+                playerIn.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("msg."+NAME+".incomplete")));
+            return false;
+        }else{
+            teleport(worldIn, bottompillar);
+            return true;
+        }
+    }
+    public void teleport(World worldIn, BlockPos pos){
+        if (FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER){
             BlockPos firstcorner=pos.add((AncientPowerTeleporter.ROOMSIZE-1)/2, AncientPowerTeleporter.ROOMHEIGHT, (AncientPowerTeleporter.ROOMSIZE-1)/2);
-            BlockPos secondcorner=pos.add(-(AncientPowerTeleporter.ROOMSIZE-1)/2, 1, -(AncientPowerTeleporter.ROOMSIZE-1)/2);
+            BlockPos secondcorner=pos.add(-(AncientPowerTeleporter.ROOMSIZE-1)/2, 0, -(AncientPowerTeleporter.ROOMSIZE-1)/2);
             List entitylist=worldIn.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(secondcorner, firstcorner));
-            System.out.println(entitylist);
-            EntityPlayerMP playermp = (EntityPlayerMP)playerIn;
-            int dim=playermp.dimension==AncientPowerWorldProvider.DIMENSIONID?0:AncientPowerWorldProvider.DIMENSIONID;
+            int dim;
             for (Object object : entitylist) {
                 if(object instanceof EntityPlayerMP){
                     EntityPlayerMP toteleport=(EntityPlayerMP) object;
-                    playermp.mcServer.getConfigurationManager().transferPlayerToDimension(toteleport, dim, new AncientPowerTeleporter( toteleport.mcServer.worldServerForDimension(dim), toteleport.getPositionVector().xCoord-pos.getX(),toteleport.getPositionVector().zCoord-pos.getZ()));
-                    
+                    dim=toteleport.dimension==AncientPowerWorldProvider.DIMENSIONID?0:AncientPowerWorldProvider.DIMENSIONID;
+                    toteleport.mcServer.getConfigurationManager().transferPlayerToDimension(toteleport, dim, new AncientPowerTeleporter( toteleport.mcServer.worldServerForDimension(dim), toteleport.getPositionVector().xCoord-pos.getX(),toteleport.getPositionVector().zCoord-pos.getZ()));
+
                 }
             }
         }
-
-        return true;
+    }
+    public BlockPos getBottomofPillar(World worldIn, BlockPos pos) {
+        BlockPos lastpillarblock=pos;
+        IBlockState bottomblockstate;
+        for (int i = 1; i <=3; i++) {
+            bottomblockstate=worldIn.getBlockState(pos.down(i));
+            if(bottomblockstate.getBlock()!=INSTANCE){
+                lastpillarblock=pos.down(i-1);
+                break;
+            }
+        }
+        for (int i = 1; i <=2; i++) {
+            if(worldIn.getBlockState(lastpillarblock.up(i)).getBlock()!=INSTANCE){
+                return null;
+            } 
+        }
+        return lastpillarblock;
     }
     @Override
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn,
             BlockPos pos) {
         int i;
         IBlockState bottomblockstate;
-        for (i = 0; i <2; i++) {
+        for (i = -1; i <2; i++) {
             bottomblockstate=worldIn.getBlockState(pos.down(i+1));
             if(bottomblockstate.getBlock()!=INSTANCE)
                 break;
@@ -95,5 +123,9 @@ public class BlockGatewayPillar extends Block {
     protected BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[]{RELPOS});
+    }
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
     }
 }
