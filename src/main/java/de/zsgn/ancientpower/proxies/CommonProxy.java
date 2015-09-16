@@ -13,12 +13,14 @@ import de.zsgn.ancientpower.blocks.env.BlockAncientStone;
 import de.zsgn.ancientpower.blocks.env.BlockBrokenAncientStone;
 import de.zsgn.ancientpower.blocks.env.BlockCrystalEnergyOre;
 import de.zsgn.ancientpower.blocks.env.BlockScrapSoil;
+import de.zsgn.ancientpower.blocks.machines.BlockEnergizingFurnace;
 import de.zsgn.ancientpower.dimension.AncientPowerWorldProvider;
 import de.zsgn.ancientpower.dimension.worldgen.ScrapSoilgen;
 import de.zsgn.ancientpower.dimension.worldgen.SimpleWorldGen;
 import de.zsgn.ancientpower.fluids.FluidLiquidEnergy;
 import de.zsgn.ancientpower.items.ItemChargeableCrystal;
 import de.zsgn.ancientpower.items.ItemMetalPiece;
+import de.zsgn.ancientpower.tileentities.machines.TileEntityEnergizingFurnace;
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.DimensionManager;
@@ -50,6 +52,9 @@ public class CommonProxy {
         GameRegistry.registerBlock(BlockAncientStone.INSTANCE, BlockAncientStone.NAME);
         GameRegistry.registerBlock(BlockBrokenAncientStone.INSTANCE, BlockBrokenAncientStone.NAME);
         GameRegistry.registerBlock(BlockGatewayPillar.INSTANCE, BlockGatewayPillar.NAME);
+        GameRegistry.registerBlock(BlockEnergizingFurnace.INSTANCE, BlockEnergizingFurnace.NAME);
+        
+        GameRegistry.registerTileEntity(TileEntityEnergizingFurnace.class, BlockEnergizingFurnace.NAME);
         
         GameRegistry.registerWorldGenerator(new SimpleWorldGen(), 1); //1 is the weight for generator, heavier generators run later
         
