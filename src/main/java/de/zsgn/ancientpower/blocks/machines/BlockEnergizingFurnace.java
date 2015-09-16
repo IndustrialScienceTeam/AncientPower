@@ -29,5 +29,11 @@ public final static String NAME="energizingfurnace";
         return new TileEntityEnergizingFurnace();
     }
 
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos,
+            IBlockState state, EntityPlayer playerIn, EnumFacing side,
+            float hitX, float hitY, float hitZ) {
+       return Util.rightClickMachineBlock(worldIn,pos,state,playerIn,side);
+    }
 
 }
