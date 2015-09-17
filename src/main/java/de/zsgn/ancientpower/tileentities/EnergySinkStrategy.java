@@ -7,8 +7,8 @@ public class EnergySinkStrategy implements IEnergySink {
     private final static String STORED="stored";
     private final static String NAME="energy";
     
-    public int capacity=100;
-    public int stored=100;
+    protected int capacity=100;
+    protected int stored=100;
     
     public EnergySinkStrategy(int capacity, int stored) {
         this.capacity = capacity;
@@ -51,6 +51,18 @@ public class EnergySinkStrategy implements IEnergySink {
         tosave.setInteger(CAPACITY, capacity);
         tosave.setInteger(STORED, stored);
         compound.setTag(NAME, tosave);
+    }
+    public int getCapacity() {
+        return capacity;
+    }
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+    public int getStored() {
+        return stored;
+    }
+    public void setStored(int stored) {
+        this.stored = stored;
     }
 
 }
