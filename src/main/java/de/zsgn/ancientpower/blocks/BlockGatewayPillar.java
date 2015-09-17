@@ -34,8 +34,13 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class BlockGatewayPillar extends Block {
     public final static String NAME="gatewaypillar";
-    public final static PropertyInteger RELPOS=PropertyInteger.create("relpos", 0, 2);
     public final static BlockGatewayPillar INSTANCE=new BlockGatewayPillar();
+    
+    /**
+     * The property used for the blockstate, needs to be defined here.
+     * It can save an int from 0 to 2.
+     */
+    public final static PropertyInteger RELPOS=PropertyInteger.create("relpos", 0, 2);
 
     public BlockGatewayPillar() {
         super(Material.rock);
@@ -45,6 +50,11 @@ public class BlockGatewayPillar extends Block {
         this.setResistance(10F);
         this.setHarvestLevel("pickaxe",1);
     }
+    
+    /** 
+     * Sends a message to the player, when the pillar is incomplete, otherwise it teleports the player to the dimension.
+     * Gets invoked, when the player right clicks the block
+     */
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos,
             IBlockState state, EntityPlayer playerIn, EnumFacing blockside,
@@ -62,6 +72,13 @@ public class BlockGatewayPillar extends Block {
             return true;
         }
     }
+    
+    /**
+     * Teleports all Entities in the range of the pillar into the other dimension using a AncientPowerTeleporter object.
+     * @see de.zsgn.ancientpower.dimension.AncientPowerTeleporter
+     * @param worldIn The world object.
+     * @param pos The position of the block.
+     */
     public void teleport(World worldIn, BlockPos pos){
         if (FMLCommonHandler.instance().getEffectiveSide() == Side.SERVER){
             BlockPos firstcorner=pos.add((AncientPowerTeleporter.ROOMSIZE-1)/2, AncientPowerTeleporter.ROOMHEIGHT, (AncientPowerTeleporter.ROOMSIZE-1)/2);
@@ -78,6 +95,12 @@ public class BlockGatewayPillar extends Block {
             }
         }
     }
+    /**
+     * Finds the bottom block of the pillar
+     * @param worldIn The world object.
+     * @param pos The starting position
+     * @return The position of the bottom pillar, null, when the pillar is incomplete.
+     */
     public BlockPos getBottomofPillar(World worldIn, BlockPos pos) {
         BlockPos lastpillarblock=pos;
         IBlockState bottomblockstate;
@@ -95,6 +118,13 @@ public class BlockGatewayPillar extends Block {
         }
         return lastpillarblock;
     }
+    /**
+     * Returns a differnt blockstate(Used for finding the right model from the blockstates file) depending on its position in the pillar
+     * @param state The state saved for the block
+     * @param worldIn The world access
+     * @param pos The position of the block
+     * @return The blockstate
+     */
     @Override
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn,
             BlockPos pos) {
@@ -108,22 +138,28 @@ public class BlockGatewayPillar extends Block {
         return state.withProperty(RELPOS, i);
 
     }
-    @Override
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos,
-            IBlockState state) {
-        // TODO Auto-generated method stub
-        return super.getCollisionBoundingBox(worldIn, pos, state);
-
-    }
+    /**
+     * Returns metadata to save, generated from the blockstate. 
+     * This block generates its state dynamically, so there is no need to save the blockstate.
+     * @param state The blockstate of the block
+     * @return The meta ID
+     */
     public int getMetaFromState(IBlockState state)
     {
         return 0;
     }
+    /** Creates the base for the blockstate of this block with its properties, in this case only the position in the pillar.
+     * @return The empty blockstate
+     */
     @Override
     protected BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[]{RELPOS});
     }
+    
+    /**  Is the block 1m^3? Important, because if it is minecraft is not rendering surfaces next to it.
+     * @return Is the block 1m^3?
+     */
     @Override
     public boolean isOpaqueCube() {
         return false;
