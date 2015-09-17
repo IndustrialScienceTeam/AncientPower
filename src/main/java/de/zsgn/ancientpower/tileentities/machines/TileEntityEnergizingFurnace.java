@@ -89,8 +89,7 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IE
 
     @Override
     public int getFieldCount() {
-        // TODO Auto-generated method stub
-        return 0;
+        return 4;
     }
 
     @Override
