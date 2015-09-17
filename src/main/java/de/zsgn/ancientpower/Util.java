@@ -22,7 +22,6 @@ public class Util {
             if(playerIn.inventory.getCurrentItem()==null){
                 ItemStack stack=null;
                 for (int index : inv.getSlotsForFace(side)) {
-                    System.out.println("LOL");
                     if(inv.canExtractItem(index, inv.getStackInSlot(index), side)){
                         stack=inv.decrStackSize(index, 1);
                         break;
