@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ "$TRAVIS_REPO_SLUG" == "IndustrialScienceTeam/AncientPower" ]  && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
-
+  echo -e "Generating JavaDoc...\n"
+  ./gradlew javadoc 
   echo -e "Publishing javadoc...\n"
 
   cp -R build/docs/javadoc $HOME/javadoc-latest
