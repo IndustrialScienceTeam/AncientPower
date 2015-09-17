@@ -22,11 +22,23 @@ public class AncientPowerWorldProvider extends WorldProvider {
     public String getInternalNameSuffix() {
         return NAME.toLowerCase(Locale.US).replace(' ', '_');
     }
+    @Override
     public void registerWorldChunkManager() {        
         this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.plains, 0.0F); 
         this.dimensionId = DIMENSIONID;
     } 
+    @Override
     public IChunkProvider createChunkGenerator() {
         return new AncientPowerChunkProvider(worldObj, worldObj.getSeed());
+    }
+    @Override
+    public boolean canCoordinateBeSpawn(int x, int z)
+    {
+        return false;
+    }
+    @Override
+    public boolean canRespawnHere()
+    {
+        return false;
     }
 }
