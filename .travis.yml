@@ -5,7 +5,7 @@ jdk:
 before_install: git clone https://github.com/BuildCraft/BuildCraft-Localization.git ../BuildCraft-Localization
 install: ./gradlew setupCIWorkspace -S
 script: ./gradlew build
-after_success: - .utility/initiate-publish.sh
+after_success: ./javadoc_to_gh_pages.sh
 
 env:
   global:
