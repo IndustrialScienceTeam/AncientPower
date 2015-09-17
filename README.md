@@ -3,4 +3,5 @@
 A MinecraftForge based Mod for Minecraft
 
 http://industrialscienceteam.github.io/AncientPower
+
 http://industrialscienceteam.github.io/AncientPower/javadoc
