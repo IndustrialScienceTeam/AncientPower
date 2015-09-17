@@ -48,13 +48,35 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv {
 
     @Override
     public int getField(int id) {
+        switch (id) {
+        case 0:
+            return burnticks;
+        case 1:
+            return getMinBurnTicks();
+        case 2:
+            return energySinkStrategy.getStored();
+        case 3:
+            return energySinkStrategy.getCapacity();
+        }
         return 0;
     }
 
     @Override
     public void setField(int id, int value) {
-        // TODO Auto-generated method stub
-        
+        switch (id) {
+        case 0:
+            burnticks=value;
+            return;
+        case 1:
+            return;
+        case 2:
+            energySinkStrategy.setStored(value);
+            return;
+        case 3:
+            energySinkStrategy.setCapacity(value);
+            return;
+        }
+        return;
     }
 
     @Override
