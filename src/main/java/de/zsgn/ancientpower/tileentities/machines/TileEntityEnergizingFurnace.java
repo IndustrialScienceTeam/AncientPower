@@ -1,6 +1,8 @@
 package de.zsgn.ancientpower.tileentities.machines;
 
 import de.zsgn.ancientpower.blocks.machines.BlockEnergizingFurnace;
+import de.zsgn.ancientpower.tileentities.EnergySinkStrategy;
+import de.zsgn.ancientpower.tileentities.IEnergySink;
 import de.zsgn.ancientpower.tileentities.TileEntityWithInv;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -11,17 +13,23 @@ import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
+import net.minecraftforge.fluids.FluidRegistry;
 
-public class TileEntityEnergizingFurnace extends TileEntityWithInv {
+public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IEnergySink {
     public final static int INPUTSLOT=0;
     public final static int OUTPUTSLOT=1;
-    protected int burnticks=-1;
+    public final static int CAPACITY=1000;
+    public final static String BURNTICKSKEY="BURNTICKS";
     
+    protected int burnticks=-1;
+    protected  EnergySinkStrategy energySinkStrategy;
     
     public TileEntityEnergizingFurnace() {
         super(2, BlockEnergizingFurnace.NAME);
+        energySinkStrategy=new EnergySinkStrategy(CAPACITY, 20*10);
     }
 
     @Override
@@ -92,7 +100,9 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv {
                 smeltItem();
                 burnticks=-1;
             }else{
+                if(energySinkStrategy.consumePower(1)){
                 burnticks++; 
+                }    
             }
         }else if(canSmelt()){
             burnticks=1;
@@ -116,12 +126,13 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv {
         // TODO Auto-generated method stub
         return null;
     }
+    //From the Vanilla Furnace:
     /**
      * Returns true if the furnace can smelt an item, i.e. has a source item, destination stack isn't full, etc.
      */
     protected boolean canSmelt()
     {
-        if (this.slots[INPUTSLOT] == null)
+        if (this.slots[INPUTSLOT] == null||energySinkStrategy.getStored()==0)
         {
             return false;
         }
@@ -161,6 +172,25 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv {
                 this.slots[INPUTSLOT] = null;
             }
         }
+    }
+
+    @Override
+    public int sinkEnergy(int amount) {
+        return energySinkStrategy.sinkEnergy(amount);
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound compound) {
+        super.readFromNBT(compound);
+        energySinkStrategy=new EnergySinkStrategy(compound);
+        burnticks=compound.getInteger(BURNTICKSKEY);
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound compound) {
+        super.writeToNBT(compound);
+        energySinkStrategy.writeToNBT(compound);
+        compound.setInteger(BURNTICKSKEY, burnticks);
     }
 
 
