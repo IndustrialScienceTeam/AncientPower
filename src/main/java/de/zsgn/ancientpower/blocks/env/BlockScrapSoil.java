@@ -22,6 +22,12 @@ public class BlockScrapSoil extends Block {
 		this.setResistance(1F);
 		this.setHarvestLevel("pickaxe",0);
 	}
+	   /** 
+     * Returns the Item dropped by the block.
+     * @param blockstate The Blockstate
+     * @param random A random number generator
+     * @param fortune The level of a fortune enhancement
+     */
 	@Override
 	public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
 	    if (random.nextInt(4) >= 1)

@@ -21,6 +21,12 @@ public class BlockAncientStone extends Block {
 		this.setResistance(20F);
 		this.setHarvestLevel("pickaxe",2);
 	}
+	/** 
+	 * Returns the Item dropped by the block.
+	 * @param blockstate The Blockstate
+	 * @param random A random number generator
+	 * @param fortune The level of a fortune enhancement
+	 */
 	@Override
 	public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
 	    return Item.getItemFromBlock(BlockBrokenAncientStone.INSTANCE);

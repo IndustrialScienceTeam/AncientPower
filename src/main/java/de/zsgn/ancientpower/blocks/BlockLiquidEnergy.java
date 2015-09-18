@@ -13,6 +13,10 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+/**
+ * The basic liquid energy block.
+ *
+ */
 public class BlockLiquidEnergy extends BlockFluidFinite {
     public static final BlockLiquidEnergy instance=new BlockLiquidEnergy();
     public static final String NAME="Block"+FluidLiquidEnergy.NAME;
@@ -23,6 +27,13 @@ public class BlockLiquidEnergy extends BlockFluidFinite {
         
     }
 
+    /** 
+     * The drain method, returns a block as a fluid stack
+     * @param worldIn The world object
+     * @param pos The position of the block
+     * @param doDrain Remove the block, or only simulate it
+     * @return The FluidStack
+     */
     public FluidStack drain(World worldIn, BlockPos pos,
             boolean doDrain) {
         int resultamount=MathHelper.floor_float(getQuantaPercentage(worldIn, pos) * FluidContainerRegistry.BUCKET_VOLUME);

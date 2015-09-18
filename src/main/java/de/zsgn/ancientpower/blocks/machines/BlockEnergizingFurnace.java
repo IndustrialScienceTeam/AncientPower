@@ -24,11 +24,21 @@ public final static String NAME="energizingfurnace";
         this.setHarvestLevel("pickaxe",2);
     }
 
+    /** 
+     * Gets invoked, when the block is placed,
+     * @param worldIn The world object
+     * @param meta The meta id(probaly not updated to blockstates)
+     * @return The created TileEntity object.
+     */
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return new TileEntityEnergizingFurnace();
     }
-
+    /** 
+     * Uses the rightClickMachineBlock() from the Util class for the extraction/insertion mechanics.
+     * Gets invoked, when the player right clicks the block
+     * @see de.zsgn.ancientpower.Util.rightClickMachineBlock(World, BlockPos, IBlockState, EntityPlayer, EnumFacing)
+     */
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos,
             IBlockState state, EntityPlayer playerIn, EnumFacing side,

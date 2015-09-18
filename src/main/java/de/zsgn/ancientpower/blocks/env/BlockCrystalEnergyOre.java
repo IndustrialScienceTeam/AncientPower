@@ -19,7 +19,13 @@ public class BlockCrystalEnergyOre extends Block {
 public static final String NAME="crystalenergyore";
 public static final BlockCrystalEnergyOre INSTANCE=new BlockCrystalEnergyOre();
 
+/**
+ * What's the minimum size of the spawned liquid block(1-8)
+ */
 public static final int MINQUANTA=1;
+/**
+ * What's the maxinum size of the spawned liquid block(1-8)
+ */
 public static final int MAXQUANTA=8;
 
 
@@ -63,6 +69,11 @@ public static final int MAXQUANTA=8;
             harvesters.set(null);
         }
     }
+    /**
+     * Calculates the size of the spawned block
+     * @param fortune The fortune level
+     * @return The size (0-8)
+     */
     public int calculateQuanta(int fortune){
         int wonquanta=MINQUANTA;
         wonquanta=wonquanta+RANDOM.nextInt(MAXQUANTA-MINQUANTA-1);
