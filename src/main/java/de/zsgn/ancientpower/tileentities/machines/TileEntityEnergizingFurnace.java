@@ -1,7 +1,7 @@
 package de.zsgn.ancientpower.tileentities.machines;
 
 import de.zsgn.ancientpower.blocks.machines.BlockEnergizingFurnace;
-import de.zsgn.ancientpower.tileentities.EnergySinkStrategy;
+import de.zsgn.ancientpower.tileentities.EnergyStrategy;
 import de.zsgn.ancientpower.tileentities.IEnergySink;
 import de.zsgn.ancientpower.tileentities.TileEntityWithInv;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,11 +25,11 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IE
     public final static String BURNTICKSKEY="BURNTICKS";
     
     protected int burnticks=-1;
-    protected  EnergySinkStrategy energySinkStrategy;
+    protected  EnergyStrategy energySinkStrategy;
     
     public TileEntityEnergizingFurnace() {
         super(2, BlockEnergizingFurnace.NAME);
-        energySinkStrategy=new EnergySinkStrategy(CAPACITY, 20*10);
+        energySinkStrategy=new EnergyStrategy(CAPACITY, 20*10);
     }
 
     @Override
@@ -181,7 +181,7 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IE
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        energySinkStrategy=new EnergySinkStrategy(compound);
+        energySinkStrategy=new EnergyStrategy(compound);
         burnticks=compound.getInteger(BURNTICKSKEY);
     }
 

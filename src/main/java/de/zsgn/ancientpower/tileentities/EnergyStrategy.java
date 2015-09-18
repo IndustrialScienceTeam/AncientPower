@@ -2,7 +2,7 @@ package de.zsgn.ancientpower.tileentities;
 
 import net.minecraft.nbt.NBTTagCompound;
 
-public class EnergySinkStrategy implements IEnergySink {
+public class EnergyStrategy implements IEnergySink {
     private final static String CAPACITY="capacity";
     private final static String STORED="stored";
     private final static String NAME="energy";
@@ -10,11 +10,11 @@ public class EnergySinkStrategy implements IEnergySink {
     protected int capacity=100;
     protected int stored=100;
     
-    public EnergySinkStrategy(int capacity, int stored) {
+    public EnergyStrategy(int capacity, int stored) {
         this.capacity = capacity;
         this.stored = stored;
     }
-    public EnergySinkStrategy(NBTTagCompound compound) {
+    public EnergyStrategy(NBTTagCompound compound) {
         super();
         readFromNBT(compound);
     }
