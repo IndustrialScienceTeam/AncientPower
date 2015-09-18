@@ -29,8 +29,9 @@ public class EnergyStrategy implements IEnergySink {
        return amount-tostore;
     }
     
-    public boolean consumePower(int amount) {
+    public boolean consumePower(int amount, boolean doconsume) {
         if(stored-amount>=0){
+            if(doconsume)
             stored=stored-amount;
             return true;
         }
