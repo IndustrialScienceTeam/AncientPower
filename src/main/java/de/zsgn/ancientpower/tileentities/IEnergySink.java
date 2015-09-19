@@ -1,5 +1,5 @@
 package de.zsgn.ancientpower.tileentities;
 
-public interface IEnergySink {
+public interface IEnergySink extends IEnergyTileEntity{
 public int sinkEnergy(int amount);
 }
