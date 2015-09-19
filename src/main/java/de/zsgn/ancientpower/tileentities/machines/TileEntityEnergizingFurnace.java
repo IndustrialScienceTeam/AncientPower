@@ -14,11 +14,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IEnergySink {
+public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IEnergySink, IUpdatePlayerListBox {
     public final static int INPUTSLOT=0;
     public final static int OUTPUTSLOT=1;
     public final static int CAPACITY=1000;
@@ -99,7 +100,7 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IE
                 smeltItem();
                 burnticks=-1;
             }else{
-                if(energySinkStrategy.consumePower(1)){
+                if(energySinkStrategy.consumePower(1,true)){
                 burnticks++; 
                 }    
             }
@@ -190,6 +191,16 @@ public class TileEntityEnergizingFurnace extends TileEntityWithInv implements IE
         super.writeToNBT(compound);
         energySinkStrategy.writeToNBT(compound);
         compound.setInteger(BURNTICKSKEY, burnticks);
+    }
+
+    @Override
+    public int getCapacity() {
+        return energySinkStrategy.getCapacity();
+    }
+
+    @Override
+    public int getStored() {
+       return energySinkStrategy.getStored();
     }
 
 
